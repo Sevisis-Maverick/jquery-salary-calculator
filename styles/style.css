@@ -1,0 +1,21 @@
+body {
+    font-family: verdana, arial, serif; 
+    color: #5070a0;
+    background-color: #292929;
+};
+
+th {
+    spac
+    background-color: #1f1f1f;
+    border-bottom: 1px#0c0c0c;
+    padding: 5px;
+};
+
+tr {
+    padding: 10px;
+    text-align: center;
+};
+
+td {
+    border-bottom: 1px solid#080808;
+};
