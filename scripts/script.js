@@ -2,8 +2,7 @@ console.log('Hello world~');
 
 
 
-//Declare the monthly salary variable!
-let monthlySalary = 0
+let monthlySalary = 0;
 
 
 
@@ -110,7 +109,7 @@ function readyNow() {
         //Capture click event on every "deleteButton" AFTER the inputs are appended!
         $('.deleteButton').on('click', deleteRow);
         */
-       $('body').on('click', '.deleteButton', deleteRow);
+        $('body').on('click', '.deleteButton', deleteRow);
 
         //Then empty the input fields! 
         $('#inputFirstName').val('');
@@ -119,9 +118,18 @@ function readyNow() {
         $('#inputTitle').val('');
         $('#inputAnnualSalary').val('');
 
-        //Now let's calculate MONTHLY SALARY with the numbers for the annual salaries!
-        
-    };
+        //Redeclare "monthlySalary" with the "annualSalary" divided by 12!
+        monthlySalary += annualSalary / 12; 
+
+        //Test to see that "monthlySalary" is being added with every submission!
+        console.log(monthlySalary);
+
+        //Update the "monthlySal" span with the new "monthlySalary"!
+        $('#monthlySal').text(`$${monthlySalary}`);
+
+    }; //End onSubmitButton function!
+
+    
 
     //Create function that every "deleteButton" calls on!
     function deleteRow(event) {
@@ -136,12 +144,16 @@ function readyNow() {
         //Then remove it from the DOM!
         targetRow.remove();
 
-    }
+    } //End deleteRow function!
+
+
 
     //If monthly salary is more than $20,000, turn red!
     if (monthlySalary > 20000) {
         $('#monthlySal').css('color', 'red');
     };
+
+
 
 } //End readyNow function!
 
